@@ -1,24 +1,14 @@
 <?php
+$db = new PDO(    /*$db défini dans index */
+    DB_TYPE.':host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME.';charset='.DB_CHARSET,
+    DB_USER,
+    DB_PWD
+);
+
 
 $item = $db->query('SELECT instruments FROM categorie ORDER BY id DESC');   /*$db défini dans index */
-$item = $db->query('SELECT instruments FROM categorie WHERE instruments LIKE "%' .$g. '%" ORDER BY id DESC');
-
-$item = $db->query('SELECT musiciens FROM categorie ORDER BY id DESC');   /*$db défini dans index */
-$item = $db->query('SELECT musiciens FROM categorie WHERE musiciens LIKE "%' .$g. '%"  ORDER BY id DESC');
-
-$item = $db->query('SELECT instruments FROM musiciens ORDER BY id DESC');   /*$db défini dans index */
-$item = $db->query('SELECT instruments FROM musiciens WHERE instruments LIKE "%' .$g. '%"  ORDER BY id DESC');
-
-$item = $db->query('SELECT musiciens FROM instruments ORDER BY id DESC');   /*$db défini dans index */
-$item = $db->query('SELECT musiciens FROM instruments WHERE musiciens LIKE "%' .$g. '%"  ORDER BY id DESC');
 
 
-
-if(isset($_GET['google']) AND !empty($_GET['google'])){
-    $g = htmlspecialchars($_GET['google']);   /*$g pour google*/
-
-    $i;
-}
 
 ?>
 
@@ -29,7 +19,7 @@ if(isset($_GET['google']) AND !empty($_GET['google'])){
 </form>
 
 <ul>
-    <?php while($i = $item->fetch()){ ?>
+    <?php while($i = $item->fetch()){ ?>    <!--pour avoir une boucle qui va récupérer les infos de ma db et les mettre dans une liste-->
         <li><?= $i['instruments'] ?> </li>
 <?php }  ?>
 </ul>
