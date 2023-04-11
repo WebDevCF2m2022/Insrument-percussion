@@ -1,7 +1,7 @@
 <?php
 require_once "../config.php";
 require_once "../model/ficheModel.php";
-require_once "../controller/publicController.php";
+include_once '../model/googleModel.php';
 
 
 

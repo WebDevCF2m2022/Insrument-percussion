@@ -1,5 +1,10 @@
 <?php
 
+if (isset ($_POST['search'])){
+    $search_query = $_POST['search'];
+    searching($db, $search_query);
+}
+
 if(isset($_GET['page'])){
 
     switch($_GET['page']){

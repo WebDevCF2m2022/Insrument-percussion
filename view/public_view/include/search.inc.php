@@ -1,9 +1,7 @@
-<?php
-//include_once '../model/googleModel.php';
-?>
 
 
-<form method="POST" action="rechercher.php">
+
+<form method="POST" action="">
     <input type="text" name="search" placeholder="Recherche...">
     <button type="submit">Rechercher</button>
 </form>

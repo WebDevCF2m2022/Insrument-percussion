@@ -1,7 +1,11 @@
 <?php
 
+
 // Récupérez la requête de recherche à partir du formulaire soumis
-$search_query = $_POST['search'];
+
+
+function searching(PDO $db, string $search_query){
+
 
 // Interrogez les tables SQL pour récupérer les résultats qui correspondent à la requête de recherche
 $sql = "SELECT * FROM categorie WHERE nom_categorie LIKE '%$search_query%'
@@ -18,3 +22,5 @@ if ($result->rowCount() > 0) {
       } else {
         echo "Aucun résultat trouvé pour la recherche: " . $search_query;
       }
+    }
+  
