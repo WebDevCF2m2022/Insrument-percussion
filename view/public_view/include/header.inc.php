@@ -9,11 +9,11 @@
             <p><span>Pro</span>jet</p> <!--nom sur la barre nav-->
         </div>
         <ul class="menu">
-            <li><a href="?views=homePage">Accueil</a></li>
-            <li><a href="?views=electrophone">Electrophone</a></li>
-            <li><a href="?views=idiophone">Idiophone</a></li>
-            <li><a href="?views=membranophone">Membranophone</a></li> 
-            <li><a href="#contact">Contact</a></li> 
+            <li><a href="?page=homePage">Accueil</a></li>
+            <li><a href="?page=electrophone">Electrophone</a></li>
+            <li><a href="?page=idiophone">Idiophone</a></li>
+            <li><a href="?page=membranophone">Membranophone</a></li> 
+            <li><a href="?page=contact">Contact</a></li> 
         </ul>
         <nav class="navbar bg-light">
             <div class="container-fluid">
