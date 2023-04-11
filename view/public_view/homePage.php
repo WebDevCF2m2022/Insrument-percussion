@@ -15,36 +15,8 @@
 </head>
 <body>
     
-    <!-- header  -->
-    <header>
-        
-        <!-- menu responsive -->
-        
-        <div class="menu_toggle">
-            <span></span>
-        </div>
+        <?php include 'include/header.inc.php' ?>
 
-        <div class="logo">
-            <p><span>Pro</span>jet</p> <!--nom sur la barre nav-->
-        </div>
-        <ul class="menu">
-            <li><a href="#home">Acceuil</a></li> <!--lien vers les pages -->
-            <li><a href="#cars">Instruments</a></li> <!--lien vers les pages -->
-            <li><a href="#services">Services</a></li> <!--lien vers les pages -->
-            <li><a href="#contact">Contact</a></li> <!--lien vers les pages -->
-        </ul>
-        <nav class="navbar bg-light">
-            <div class="container-fluid">
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </div>
-          </nav>
-        
-        <button class="login_btn">LOGIN</button> <!--cée le bouton -->
-        
-    </header> 
     
     
     <!-- section Acceuil -->
@@ -52,7 +24,7 @@
      
     <section id="home">
         <div class="left">
-            <h1>Les <span>Instruments</span> De Percussion</h1>
+            <h1>Les <span>Instruments</span> à percussion</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit doloremque earum, totam laudantium dolor voluptatum fugiat. Odio doloribus nostrum harum corporis. Natus omnis deleniti reiciendis illum maxime necessitatibus accusantium esse.</p>
             
         </div>
