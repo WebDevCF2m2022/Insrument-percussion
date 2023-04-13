@@ -24,3 +24,30 @@ if ($result->rowCount() > 0) {
       }
     }
   
+
+ /*   <?php
+
+$item = $db->query('SELECT instruments FROM categorie ORDER BY id DESC');   
+$item = $db->query('SELECT instruments FROM categorie WHERE instruments LIKE "%' .$g. '%" ORDER BY id DESC');
+
+$item = $db->query('SELECT musiciens FROM categorie ORDER BY id DESC');   
+$item = $db->query('SELECT musiciens FROM categorie WHERE musiciens LIKE "%' .$g. '%"  ORDER BY id DESC');
+
+$item = $db->query('SELECT instruments FROM musiciens ORDER BY id DESC');  
+$item = $db->query('SELECT instruments FROM musiciens WHERE instruments LIKE "%' .$g. '%"  ORDER BY id DESC');
+/*$db
+$item = $db->query('SELECT musiciens FROM instruments ORDER BY id DESC');    
+$item = $db->query('SELECT musiciens FROM instruments WHERE musiciens LIKE "%' .$g. '%"  ORDER BY id DESC');
+
+
+
+if(isset($_GET['google']) AND !empty($_GET['google'])){
+    $g = htmlspecialchars($_GET['google']);   
+    $i = $db->query('SELECT instruments FROM categorie WHERE instruments LIKE "%' .$g. '%" ORDER BY id DESC');
+    if ($i ->rowCount()==0){
+      $i = $db -> query('SELECT instruments FROM categorie WHERE CONCAT (instrument, artiste) LIKE "%'.$g.'%" ORDER BY id DESC');
+    }
+}
+
+?>
+*/
