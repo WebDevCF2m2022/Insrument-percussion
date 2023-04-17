@@ -11,8 +11,15 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
     <script defer  src="js/captcha.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeaIZUlAAAAADmNnMlAY0sJmMuNarGdb-_3J18j"></script>
 
 </head>
+<?php
+if(isset($_POST['submit']))
+{
+    print_r($_POST);  die();
+}
+?>
 <body>
     
     <!--header-->
@@ -83,16 +90,26 @@ foreach ($instru as $key => $value):
                 <input type="email"placeholder="Adresse Mail">
                 <input type="text"placeholder="Objet">
                 <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <input type="hidden" name="token_generate" id="token_generate">
                 <input type="submit" value="Envoyer">
+
+        
+
+                <!-- 
+                <button class="g-recaptcha" 
+                data-sitekey="6LeaIZUlAAAAADmNnMlAY0sJmMuNarGdb-_3J18j" 
+                data-callback='onSubmit' 
+                data-action='submit'>Submit</button>
             </form>
-            <!-- CAPTCHA-->
-            <div class="cap">
-                <p id="captcha"></p>
-                <input id="captchaInput" type="text" placeholder="Remplir"><br>
-                <button id="captchaValidate">Envoyer</button>
-                <button id="captchaRefresh">Autres</button>
-            </div> 
-        </div>
+             CAPTCHA 
+            <script src="https://www.google.com/recaptcha/api.js"></script>
+            <script>
+            function onSubmit(token) {
+                document.getElementById("demo-form").submit();
+            }
+            </script>
+            -->
+            
         <?php
 foreach ($user as $key => $value) {
     echo $value['idusers'];
@@ -141,3 +158,15 @@ foreach ($user as $key => $value) {
     
 </body>
 </html>
+
+<script>
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LeaIZUlAAAAADmNnMlAY0sJmMuNarGdb-_3J18j', {action: 'submit'}).then(
+            function(token) {
+              // Add your logic to submit to your backend server here.
+              var reponse = document.querySelector("#token_generate");
+              reponse.value = token;
+          });
+        });
+
+  </script>
