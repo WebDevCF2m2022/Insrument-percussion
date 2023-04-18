@@ -30,7 +30,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit doloremque earum, totam laudantium dolor voluptatum fugiat. Odio doloribus nostrum harum corporis. Natus omnis deleniti reiciendis illum maxime necessitatibus accusantium esse.</p>
             
         </div>
-        <div class="images">
+        <div class="images1">
             <img src="img/set-realistic-drums-metal-cymbals-260nw-2128767320.png" class="shape">
         </div>
     </section>
@@ -94,12 +94,7 @@ foreach ($instru as $key => $value):
             </div> 
         </div>
         <?php
-foreach ($user as $key => $value) {
-    echo $value['idusers'];
-    echo $value['identite'];
-    echo $value['lemail'];
-   
-};
+
 ?>
     </section>
  

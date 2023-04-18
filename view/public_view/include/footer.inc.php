@@ -1,3 +1,3 @@
-<footer>
+<footer class="footer">
     <p> Copyright 2022 </p>
 </footer>

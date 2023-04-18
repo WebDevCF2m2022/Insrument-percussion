@@ -13,7 +13,7 @@
             <li><a href="?page=membranophone">Membranophone</a></li> 
             <li><a href="#contact">Contact</a></li> 
         </ul>
-        <nav class="navbar bg-light">
+        <nav class="navbar">
             <div class="container-fluid">
               <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
