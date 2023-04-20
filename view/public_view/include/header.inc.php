@@ -8,9 +8,12 @@
         </div>
         <ul class="menu">
             <li><a href="?page=homePage">Accueil</a></li>
-            <li><a href="?page=electrophone">Electrophone</a></li>
-            <li><a href="?page=idiophone">Idiophone</a></li>
-            <li><a href="?page=membranophone">Membranophone</a></li> 
+            <?php
+// foreach
+            ?>
+            <li><a href="?page=Electrophone">Electrophone</a></li>
+            <li><a href="?page=Idiophone">Idiophone</a></li>
+            <li><a href="?page=Membranophone">Membranophone</a></li> 
             <li><a href="#contact">Contact</a></li> 
         </ul>
         <nav class="navbar">
