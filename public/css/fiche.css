@@ -1,7 +1,4 @@
 body {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
     padding: 20px;
     max-width: 100%;
     margin: 0 auto;
@@ -11,6 +8,28 @@ body {
     grid-area: header;
   }
   
+  #ficheGeneral {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "header header header header"
+    "gridfiche gridfiche gridfiche gridfiche"
+    "footer footer footer footer"
+    ;
+    grid-gap: 20px;
+  }
+
+  #gridFiche {
+    grid-area: gridfiche;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
   .fiche {
     display: grid;
     grid-template-areas:
@@ -20,13 +39,14 @@ body {
       "lirelasuite";
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-top: 20px;
     padding: 10px;
   }
   
   .imgFiche {
     grid-area: image;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 250px;
   }
   
   .nomFiche {
