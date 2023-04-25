@@ -15,10 +15,11 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="ficheGeneral">
         
     <!--header-->
     <?php include 'include/header.inc.php' ?>
-
+<div id="gridFiche">
 <?php
 //affichez les instruments de la catégorie électrophone avec un foreach
 foreach ($elec as $key => $value): 
@@ -44,13 +45,10 @@ foreach ($elec as $key => $value):
         </div>
     </div>
 
-                        
-                        
-                        
-                              
-      
 <?php endforeach; ?>
+</div>
 <?php include 'include/footer.inc.php' ?>
+</div>
 </body>
 </html>
 

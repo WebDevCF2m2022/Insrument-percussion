@@ -2,7 +2,7 @@
 
 
 //requete SQL pour recuperer les données dans la table catégorie mais seulement la catégorie ID 3 avec les instruments liés
-function getAllCategorie(PDO $db){
+function getAllCategorie(PDO $db, int $idcateg){
     $retour = $db->prepare('SELECT i.`nom`,i.`resume`,i.`url`,i.`description`,i.`son`, im.img_url FROM `instruments` i LEFT JOIN image im ON im.instruments_id = i.id WHERE i.categorie_id = ?  ');
     try{
        $retour->execute([$idcateg]);
