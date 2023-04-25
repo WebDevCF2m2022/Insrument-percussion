@@ -5,7 +5,7 @@ require_once "../model/captchaModel.php";
 
 require_once "../model/instrumentsModel.php";
 
-
+session_start();
 
 
 try {
