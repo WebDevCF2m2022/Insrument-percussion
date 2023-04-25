@@ -14,3 +14,19 @@ function getInstrumentsByCategId(PDO $db, string $categName){
     return $data;
 }
 
+
+ //requete sql pour recuperer les données de 'descripton' dans la table instruments
+function getInstrumentDescription(PDO $db, string $categName){
+    $retour = $db->prepare('SELECT i.`description` FROM `instruments` i INNER JOIN categorie c ON i.categorie_id = c.id WHERE c.nom_categorie = ?  ');
+    try{
+       $retour->execute([$categName]);
+    }catch(Exception $e){
+        die($e->getMessage());
+    }
+    $data =  $retour->fetchAll(PDO::FETCH_ASSOC);
+    var_dump($data);
+    return $data;   
+}
+
+//appelez la fonction getInstrumentsByCategId() et stockez le resultat dans une variable
+

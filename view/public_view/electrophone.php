@@ -41,6 +41,7 @@ foreach ($elec as $key => $value):
         </div>
         <div class="moreInfo">
             <a href="#">Lire la suite...</a>
+            
         </div>
     </div>
 
