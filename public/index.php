@@ -1,9 +1,9 @@
 <?php
 require_once "../config.php";
 require_once "../model/ficheModel.php";
-require_once "../model/elecModel.php";
-require_once "../model/idioModel.php";
-require_once "../model/membraModel.php";
+require_once "../model/captchaModel.php";
+
+require_once "../model/instrumentsModel.php";
 
 
 

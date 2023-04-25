@@ -11,8 +11,13 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
     <script defer  src="js/captcha.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LeaIZUlAAAAADmNnMlAY0sJmMuNarGdb-_3J18j"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 
+    <script>
+        function onSubmit(token) {
+            document.querySelector("#contactForm").submit();
+        }
+    </script>
 </head>
 <?php
 if(isset($_POST['submit']))
@@ -37,7 +42,7 @@ if(isset($_POST['submit']))
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit doloremque earum, totam laudantium dolor voluptatum fugiat. Odio doloribus nostrum harum corporis. Natus omnis deleniti reiciendis illum maxime necessitatibus accusantium esse.</p>
             
         </div>
-        <div class="images">
+        <div class="images1">
             <img src="img/set-realistic-drums-metal-cymbals-260nw-2128767320.png" class="shape">
         </div>
     </section>
@@ -85,38 +90,30 @@ foreach ($instru as $key => $value):
         <h1 class="section_title">Contact</h1>
         <div class="form_contact">
             <h3>Envoyer un message</h3>
-            <form action="#">
-                <input type="text"placeholder="Nom">
-                <input type="email"placeholder="Adresse Mail">
-                <input type="text"placeholder="Objet">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
-                <input type="hidden" name="token_generate" id="token_generate">
-                <input type="submit" value="Envoyer">
+            <form action="#" id="contactForm" method="post">
+                <!-- STATUS MESSAGE -->
+                
+                <?php if(!empty($statusMsg)){ ?>
+                    <p class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></p>
+                <?php } ?> 
 
-        
-
-                <!-- 
-                <button class="g-recaptcha" 
+                <input type="text" value="" name="nom" placeholder="Nom">
+                <input type="email" value="" name="email" placeholder="Adresse Mail">
+                <input type="text" value="" name="objet" placeholder="Objet">
+                <textarea name="message" value="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <!-- <input type="submit" value="Envoyer"> -->
+                
+            <input type="hidden" name="submit_frm" value="1">
+            <button 
+                class="g-recaptcha" 
                 data-sitekey="6LeaIZUlAAAAADmNnMlAY0sJmMuNarGdb-_3J18j" 
                 data-callback='onSubmit' 
-                data-action='submit'>Submit</button>
+                data-action='submit'>Submit
+            </button>
             </form>
-             CAPTCHA 
-            <script src="https://www.google.com/recaptcha/api.js"></script>
-            <script>
-            function onSubmit(token) {
-                document.getElementById("demo-form").submit();
-            }
-            </script>
-            -->
-            
+        </div>
         <?php
-foreach ($user as $key => $value) {
-    echo $value['idusers'];
-    echo $value['identite'];
-    echo $value['lemail'];
-   
-};
+
 ?>
     </section>
  

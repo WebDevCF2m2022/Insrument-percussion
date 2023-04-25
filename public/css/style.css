@@ -347,13 +347,14 @@ footer {
 }
 
 /*Responsive*/
-@media (max-width:682px) {
+@media (max-width:700px) {
     header {
         padding: 0 10px;
     }
     header .menu {
         display: none;
     }
+
     #home {
         padding:  0 10px;
         justify-content: center;
@@ -362,6 +363,29 @@ footer {
      #home .left ,   #home .right {
         width: 100%;
     }
+    .logo{                              /*tous prender LOGO*/
+        position: relative;
+        top: 5px;
+        left: 50px;
+    }
+    .left{                              /* tous prendre LEFT*/ 
+        position: relative;
+        top: -60px;
+    }
+    .login_btn{                         /*tous prendre login_btn*/
+        position: relative;
+        top: 50px;
+    }
+    .shape{ /* tous prendre */
+        width: 100%;
+    }
+    
+   
+    .container-fluid{                      /* tous prendre */
+        position: relative;
+        left: 90px;
+    }
+
     #home h1 {
         margin-top: 100px;
     }
@@ -453,5 +477,80 @@ footer {
         background-color: #fff;
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
+        padding: 0 0 10px 0;
     }
 }
+@media (min-width: 700px) and (max-width: 1270px) {
+    .container-fluid{                      /* tous prendre */
+        position: relative;
+        
+    }
+    .logo{
+        position: relative;
+        right: 60px;
+        top: 5px;
+    }
+
+    .menu li a {                        /* tous MENU LI A  */
+        position: relative;
+        right: 20px;
+    }
+
+    .left{
+        position: relative;
+        top: -250px;
+        
+        
+
+    }
+    .shape{
+        position: relative;
+        right: 140px;
+        top: 150px;
+        width: 180%;
+        
+    }
+   
+    #cars{
+        position: relative;
+        right: 100px 
+      
+    }
+
+    .localisation_contact_div .form_contact{
+        position: relative;
+        right: 250px;
+        height: 50%;
+        top: 300px 
+    }
+    .localisation{
+        position: relative;
+        top: -300px;
+        left: 70px;
+    }
+   
+    .section_title{
+        text-align: center;
+        position: relative;
+        left: 100px;
+    
+    }
+    .images{
+        position: relative;
+        left: 180px;
+    }
+
+    .form_contact{
+        position: relative;
+        left: 100px;
+    }
+    .footer{
+        width: 1115px;
+    }
+
+
+    }
+
+
+  
+
