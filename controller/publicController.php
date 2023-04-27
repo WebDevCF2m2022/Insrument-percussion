@@ -14,6 +14,12 @@ if(isset($_GET['page'])){
         case 'Membranophone':
             $elec = getInstrumentsByCategId($db,$_GET['page']);
             include "../view/public_view/electrophone.php";
+            break;
+        case 'login': 
+            include "../view/public_view/formulaireView.php";
+            break;
+        case 'register':
+            include "../view/public_view/register_form.php";
             break;      
 
     default:
