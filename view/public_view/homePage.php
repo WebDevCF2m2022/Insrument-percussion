@@ -89,24 +89,28 @@ foreach ($instru as $key => $value):
         <h1 class="section_title">Contact</h1>
         <div class="form_contact">
             <h3>Envoyer un message</h3>
-            <form action="#">
-                <input type="text"placeholder="Nom">
-                <input type="email"placeholder="Adresse Mail">
-                <input type="text"placeholder="Objet">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
-                <input type="submit" value="Envoyer">
-            </form>
-            <!-- CAPTCHA-->
-            <div class="cap">
-                <p id="captcha"></p>
-                <input id="captchaInput" type="text" placeholder="Remplir"><br>
-                <button id="captchaValidate">Envoyer</button>
-                <button id="captchaRefresh">Autres</button>
-            </div> 
-        </div>
-        <?php
+            <form action="#" id="contactForm" method="post">
+                <!-- STATUS MESSAGE -->
+                
+                <?php if(!empty($statusMsg)){ ?>
+                    <p class="status-msg <?php echo $status; ?>"><?php echo $statusMsg; ?></p>
+                <?php } ?> 
 
-?>
+                <input type="text" value="" name="nom" placeholder="Nom">
+                <input type="email" value="" name="email" placeholder="Adresse Mail">
+                <input type="text" value="" name="objet" placeholder="Objet">
+                <textarea name="message" value="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <!-- <input type="submit" value="Envoyer"> -->
+                
+            <input type="hidden" name="submit_frm" value="1">
+            <button 
+                class="g-recaptcha" 
+                data-sitekey="6LeaIZUlAAAAADmNnMlAY0sJmMuNarGdb-_3J18j" 
+                data-callback='onSubmit' 
+                data-action='submit'>Submit
+            </button>
+            </form>
+        </div>
     </section>
  
     <!--footer-->
