@@ -43,10 +43,11 @@ foreach ($elec as $key => $value):
         <div class="hiddenInfo" style="display:none;">
             </br><p class="pFiche"><?=$value['description'];?></p>
             <p class="pFiche"><a href="<?=$value['url'];?>" target="_blank">Lien vers Wikipédia</a></p>
-            <audio controls>
-                <source src="<?=$value['son'];?>" type="audio/mp3">
-                Votre navigateur ne supporte pas l'élément audio.
-            </audio>
+            <?php if($value['son'] != null): ?>
+                <audio controls>
+                    <source src="<?= $value['son']; ?>" type="audio/mp3">
+                </audio>
+            <?php endif; ?>
             <button class="fermerInfo">Fermer</button>
         </div>
     </div>
