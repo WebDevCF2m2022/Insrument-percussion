@@ -187,19 +187,19 @@ body {
   
   
   
-  @media screen and (min-width: 820px) and (max-width: 1000px) {
+  @media screen and (min-width: 820px) and (max-width: 1278px) {
     #gridFiche {
         grid-template-columns: repeat(3, 1fr);
     }
   }
   
-  @media screen and (min-width: 600px) and (max-width: 820px) {
+  @media screen and (min-width: 500px) and (max-width: 688px) {
     #gridFiche {
         grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 500px) {
     #gridFiche {
         grid-template-columns: 1fr;
     }
