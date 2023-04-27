@@ -41,8 +41,8 @@ foreach ($elec as $key => $value):
         <h1 class="nomFiche"><?=$value['nom'];?></h1>
         <h5 class="resumeFiche"><?=$value['resume'];?></h5>
         <div class="hiddenInfo" style="display:none;">
-            <p>Description: <?=$value['description'];?></p>
-            <p><a href="<?=$value['url'];?>" target="_blank">Lien vers Wikipédia</a></p>
+            </br><p class="pFiche"><?=$value['description'];?></p>
+            <p class="pFiche"><a href="<?=$value['url'];?>" target="_blank">Lien vers Wikipédia</a></p>
             <audio controls>
                 <source src="<?=$value['son'];?>" type="audio/mp3">
                 Votre navigateur ne supporte pas l'élément audio.
@@ -51,7 +51,7 @@ foreach ($elec as $key => $value):
         </div>
     </div>
     <div class="moreInfo">
-        <a href="#" class="plusInfo">Lire la suite...</a>
+        <a href="#" class="plusInfo">Lire la suite..</a>
     </div>
 </div>
 
