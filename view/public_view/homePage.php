@@ -28,6 +28,9 @@ if(isset($_POST['submit']))
     
     <!--header-->
         <?php include 'include/header.inc.php' ?>
+        <?php include  'include/search.inc.php'?>
+        
+      
 
     
     
