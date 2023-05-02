@@ -7,10 +7,25 @@ function donneUser($db){
 }
 //requete sql pour verifier si l'utilisateur existe dans la table users
 function verifUser($db, $email, $password){
-    $retour = $db->prepare('SELECT * FROM `users` WHERE `lemail` = :lemail AND `motdepasse` = :motdepasse');
-    $retour->bindValue(':email', $email, PDO::PARAM_STR);
-    $retour->bindValue(':password', $password, PDO::PARAM_STR);
-    $retour->execute();
-    $data =  $retour->fetch(PDO::FETCH_ASSOC);
-    return $data;
+    $retour = $db->prepare('SELECT * FROM `users` WHERE `lemail` = :lemail');
+    $retour->bindValue(':lemail', $email, PDO::PARAM_STR);
+    try {
+        $retour->execute();
+    }catch (Exception $e){
+        die ($e->getMessage());
+    }
+    if ($retour->rowCount() === 1){
+        //on vas verifier si le mdp est bon avec password_verify
+        $data =  $retour->fetch(PDO::FETCH_ASSOC);
+        if (password_verify($password, $data['motdepasse'])){
+            $_SESSION=$data;
+            $_SESSION['idsession']=session_id();
+            return true;
+    }else{
+        return false;
+    }
+    }
+
+
+
 }

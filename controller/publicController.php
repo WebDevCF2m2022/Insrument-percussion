@@ -15,7 +15,14 @@ if(isset($_GET['page'])){
             $elec = getInstrumentsByCategId($db,$_GET['page']);
             include "../view/public_view/electrophone.php";
             break;
-        case 'login': 
+        case 'login':
+            if(isset($_POST['usermail'])){
+                $user = verifUser($db,$_POST['usermail'],$_POST['userpassword']);
+                if($user) {
+                    header('location: ./');
+                    die();
+                }
+            }
             include "../view/public_view/formulaireView.php";
             break;
         case 'register':
@@ -30,4 +37,7 @@ if(isset($_GET['page'])){
 }else{
     $instru = donneInstru($db);
     include_once "../view/public_view/homePage.php";
+
 }
+//switch pour all
+
