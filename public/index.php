@@ -2,8 +2,10 @@
 require_once "../config.php";
 require_once "../model/ficheModel.php";
 require_once "../model/captchaModel.php";
-
+require_once "../model/userModel.php";
 require_once "../model/instrumentsModel.php";
+
+
 
 session_start();
 
@@ -24,5 +26,15 @@ try {
     die($e->getMessage());
 
 };
+
+
+//si nous sommes connectés
+if(isset($_SESSION['idsession']) && $_SESSION['idsession']== session_id()){
+
+    require_once "../controller/privateController.php" ;
+
+}else{
+    require_once "../controller/publicController.php";
+}
 //donneInstru($db);
-require_once "../controller/publicController.php";
+
