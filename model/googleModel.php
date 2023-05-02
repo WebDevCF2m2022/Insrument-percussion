@@ -6,7 +6,7 @@
 
 function searching(PDO $db, string $search_query){
 
-
+ /* 
 // Interrogez les tables SQL pour récupérer les résultats qui correspondent à la requête de recherche
 $sql = "SELECT * FROM categorie WHERE nom_categorie LIKE '%$search_query%'
         UNION SELECT * FROM instruments WHERE nom LIKE '%$search_query%'
@@ -24,8 +24,8 @@ if ($result->rowCount() > 0) {
       }
     }
   
+*/
 
- /*   <?php
 
 $item = $db->query('SELECT instruments FROM categorie ORDER BY id DESC');   
 $item = $db->query('SELECT instruments FROM categorie WHERE instruments LIKE "%' .$g. '%" ORDER BY id DESC');
@@ -35,7 +35,7 @@ $item = $db->query('SELECT musiciens FROM categorie WHERE musiciens LIKE "%' .$g
 
 $item = $db->query('SELECT instruments FROM musiciens ORDER BY id DESC');  
 $item = $db->query('SELECT instruments FROM musiciens WHERE instruments LIKE "%' .$g. '%"  ORDER BY id DESC');
-/*$db
+
 $item = $db->query('SELECT musiciens FROM instruments ORDER BY id DESC');    
 $item = $db->query('SELECT musiciens FROM instruments WHERE musiciens LIKE "%' .$g. '%"  ORDER BY id DESC');
 
@@ -48,6 +48,3 @@ if(isset($_GET['google']) AND !empty($_GET['google'])){
       $i = $db -> query('SELECT instruments FROM categorie WHERE CONCAT (instrument, artiste) LIKE "%'.$g.'%" ORDER BY id DESC');
     }
 }
-
-?>
-*/
