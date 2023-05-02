@@ -79,7 +79,7 @@ body {
     position: relative; /* position du body*/
 }
 header {
-    position: fixed; /*position du header*/
+   /* position: fixed;/* /*position du header*/
     top: 0; /* 0 vide en hautt*/
     left: 0; /* 0 vide a gauche*/
     right: 0; /* 0 vide a droite*/
