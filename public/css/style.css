@@ -480,14 +480,19 @@ footer {
         padding: 0 0 10px 0;
     }
 }
-@media (min-width: 700px) and (max-width: 1270px) {
+@media (min-width: 700px) and (max-width: 1180px) {
+    header{
+        width: 160%;
+    }
+    
+    
     .container-fluid{                      /* tous prendre */
         position: relative;
         
     }
     .logo{
         position: relative;
-        right: 60px;
+      
         top: 5px;
     }
 
