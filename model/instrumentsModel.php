@@ -30,3 +30,11 @@ function getInstrumentDescription(PDO $db, string $categName){
 
 //appelez la fonction getInstrumentsByCategId() et stockez le resultat dans une variable
 
+// récuperer tous les instruments de la table instruments
+function getAllInstruments(PDO $db){
+    $retour = $db->query('SELECT i.id,i.`nom`,i.`resume`,i.`url`,i.`description`,i.`son`, im.img_url FROM `instruments` i LEFT JOIN image im ON im.instruments_id = i.id');
+    $data =  $retour->fetchAll(PDO::FETCH_ASSOC);
+    //var_dump($data);
+    return $data;
+}
+
