@@ -74,7 +74,7 @@ foreach ($instru as $key => $value):
                    <div>
                         <a href="<?=$value['img_url']?>" data-toggle="lightbox" data-gallery="example-gallery">
                             
-                            <img src="<?=$value['img_url']?>" alt="" width="150px">
+                            <img src="<?=$value['img_url']?>" alt="" width="200px">
                         </a>                       
                    </div>
                    <div class="btn_main"><button class="bout"><?=$value['nom'];?></button>

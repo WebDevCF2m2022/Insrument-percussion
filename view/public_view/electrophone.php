@@ -20,6 +20,7 @@
         
     <!--header-->
     <?php include 'include/header.inc.php' ?>
+    
 <div id="gridFiche">
 <?php
 //affichez les instruments de la catégorie électrophone avec un foreach

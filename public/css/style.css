@@ -270,6 +270,8 @@ header button {
     color: #fff;
     padding: 5px 20px;
     font-size: 15px;
+    position: relative;
+    left: 60px;
 }
 
 .service {
