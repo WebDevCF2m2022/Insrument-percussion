@@ -28,7 +28,7 @@ if (isset($_GET['search'])) {
     $search = htmlspecialchars(strip_tags(trim($_GET['search'])), ENT_QUOTES);
 
     // Préparer la requête SQL
-    $sql = "SELECT * FROM instruments WHERE nom LIKE CONCAT('%', ?, '%')";
+    $sql = "SELECT i.categorie_id,c.nom_categorie FROM instruments AS i JOIN categorie AS c ON i.categorie_id=c.id WHERE i.nom LIKE CONCAT('%', ?, '%')";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(1, $search);
 
@@ -38,7 +38,8 @@ if (isset($_GET['search'])) {
 
     // Afficher les résultats
     foreach ($result as $row) {
-        echo $row['nom'] . "\n";
+        echo $row['nom_categorie'] . "\n";
+        header('location: ./?page='.$row['nom_categorie']);
     }
 }
 ?>

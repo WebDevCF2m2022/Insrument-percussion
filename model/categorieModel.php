@@ -14,3 +14,14 @@ function getAllCategorie(PDO $db, int $idcateg){
     return $data;
 }
 
+function getCategorieName(PDO $db, int $idcateg){
+    $retour = $db->prepare('SELECT nom_categorie FROM categorie WHERE categorie_id = ?');
+    try{
+       $retour->execute([$idcateg]);
+    }catch(Exception $e){
+        die($e->getMessage());
+    }
+    $data =  $retour->fetchAll(PDO::FETCH_ASSOC);
+    //var_dump($data);
+    return $data;
+}
