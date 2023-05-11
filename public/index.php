@@ -7,7 +7,12 @@ require_once "../model/instrumentsModel.php";
 require_once "../model/categorieModel.php";
 require_once "../model/adminModel.php";
 
+// on charge l'autoloader de composer pour pouvoir charger les librairies externes installées via composer
+// https://getcomposer.org/
 
+require '../vendor/autoload.php';
+
+// on démarre la session
 
 
 session_start();
