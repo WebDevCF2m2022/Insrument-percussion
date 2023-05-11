@@ -4,6 +4,7 @@ require_once "../model/ficheModel.php";
 require_once "../model/captchaModel.php";
 require_once "../model/userModel.php";
 require_once "../model/instrumentsModel.php";
+require_once "../model/adminModel.php";
 
 
 
