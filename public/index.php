@@ -4,7 +4,9 @@ require_once "../model/ficheModel.php";
 require_once "../model/captchaModel.php";
 require_once "../model/userModel.php";
 require_once "../model/instrumentsModel.php";
+require_once "../model/categorieModel.php";
 require_once "../model/adminModel.php";
+
 
 
 
@@ -33,6 +35,7 @@ try {
 if(isset($_SESSION['idsession']) && $_SESSION['idsession']== session_id()){
 
     require_once "../controller/privateController.php" ;
+
 
 }else{
     require_once "../controller/publicController.php";

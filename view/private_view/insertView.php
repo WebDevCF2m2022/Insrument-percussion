@@ -7,14 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+
+<?php
+//    foreach ($dataCateg as $categorie):
+?>
     <form action="" method="post">
         <input type="text" name="nom" placeholder="nom">
         <input type="text" name="resume" placeholder="resume">
         <input type="text" name="description" placeholder="description">
         <input type="text" name="son" placeholder="son">
         <input type="text" name="url" placeholder="url">
-        <input type="hidden" name="categorie_id" value="1">
-        <a href="?add=">Ajouter</a>
+        <select  name="categorie_id">
+                  <option value="<?$categorie?>">
+                  </option>
+        </select>
+
+       <button type="submit">Ajouter</button>
     </form>
+<?php
+   // endforeach;
+?>
 </body>
 </html>
