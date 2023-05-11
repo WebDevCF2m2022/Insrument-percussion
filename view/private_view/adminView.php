@@ -9,6 +9,7 @@
 <body>
     <h1>Admin</h1>
     <a href="?disconnect">Deconnexion</a>
+    <a href="?insert">Ajouter un article</a>
     <?php
     foreach($instruments as $instru):
         //var_dump($instru);
@@ -27,14 +28,5 @@
     <?php
     endforeach;
     ?>
-    <form action="" method="post">
-        <input type="text" name="nom" placeholder="nom">
-        <input type="text" name="resume" placeholder="resume">
-        <input type="text" name="description" placeholder="description">
-        <input type="text" name="son" placeholder="son">
-        <input type="text" name="url" placeholder="url">
-        <input type="hidden" name="categorie_id" value="1">
-        <button type="text">Ajouter  <a href="?add="></button>Ajouter </a>
-        </form>
 </body>
 </html>
