@@ -25,3 +25,11 @@ function getCategorieName(PDO $db, int $idcateg){
     //var_dump($data);
     return $data;
 }
+
+//requete SQL pour recuperer toutes les données dans la table catégorie
+function getAllCategories(PDO $db){
+    $retour = $db->query('SELECT * FROM categorie');
+    $data =  $retour->fetchAll(PDO::FETCH_ASSOC);
+    //var_dump($data);
+    return $data;
+}
