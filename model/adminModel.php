@@ -30,5 +30,5 @@ function addInstrument(PDO $db, $nom, string $resume, string $description, strin
     }catch(Exception $e){
         die($e->getMessage());
     }
-    return $retour->rowCount();
+    return $db->lastInsertId();
 }

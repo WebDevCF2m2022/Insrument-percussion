@@ -8,24 +8,28 @@
 </head>
 <body>
 
-<?php
-//    foreach ($dataCateg as $categorie):
-?>
-    <form action="" method="post">
+
+    <form action="" method="post" enctype="multipart/form-data">
         <input type="text" name="nom" placeholder="nom">
         <input type="text" name="resume" placeholder="resume">
         <input type="text" name="description" placeholder="description">
         <input type="text" name="son" placeholder="son">
         <input type="text" name="url" placeholder="url">
-        <select  name="categorie_id">
-                  <option value="<?$categorie?>">
-                  </option>
-        </select>
+        <select name="categorie_id">
 
+        <?php
+        foreach ($dataCateg as $categorie):
+        ?>
+        <option value="<?=$categorie['id']?>"><?=$categorie['nom_categorie']?></option>
+
+
+        <?php
+         endforeach;
+        ?>
+        </select></br>
+        <input type="file" size="32" name="image_field" value="">
        <button type="submit">Ajouter</button>
     </form>
-<?php
-   // endforeach;
-?>
+
 </body>
 </html>

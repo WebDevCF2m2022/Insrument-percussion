@@ -1,6 +1,8 @@
 <?php
 #var_dump($_SESSION);
 
+// https://github.com/verot/class.upload.php
+use Verot\Upload\Upload;
 
 if (isset($_GET['disconnect'])){
     if(deconnect()){
@@ -20,16 +22,41 @@ if (isset($_GET['disconnect'])){
         die();
     }
 }elseif(isset($_GET['insert'])) {
-    
+          $dataCateg = getAllCategories($db);   
     include_once '../view/private_view/insertView.php';
 
     if(isset($_POST['nom']) && isset($_POST['resume']) && isset($_POST['description']) && isset($_POST['son']) && isset($_POST['url']) && isset($_POST['categorie_id'])){ //on appelle la fonction addInstrument 
-        $dataCateg = getAllCategories($db);
+
         $addInstru = addInstrument($db, $_POST['nom'], $_POST['resume'], $_POST['description'], $_POST['son'], $_POST['url'], $_POST['categorie_id']); //var_dump($addInstru); 
         //si la fonction retourne 1 on redirige vers la page admin 
         //if($addInstru===1){ header('Location: ./'); die(); 
         //}
         echo 'Instrument ajouté avec succès !';
+
+        $nomTemps = date('YmdHis').mt_rand(1000, 9999);
+        $imgInsertPath = 'img/upload/';
+
+        $pourDB = $imgInsertPath.$nomTemps.'.jpg';
+
+        $handle = new Upload($_FILES['image_field']);
+        if ($handle->uploaded) {
+            $handle->file_new_name_body   = $nomTemps;
+            $handle->image_resize         = true;
+            $handle->image_x              = 400;
+            $handle->image_ratio_y        = true;
+            $handle->process('../public/'.$imgInsertPath);
+            if ($handle->processed) {
+                echo 'image resized';
+                $handle->clean();
+            } else {
+                echo 'error : ' . $handle->error;
+            }
+        }
+
+        // on insert l'image dans la table image avec son chemin et l'id de l'instrument
+        $insertImg = insertImg($db, $pourDB, $addInstru);
+
+
 }
 }else{
 
