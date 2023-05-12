@@ -122,6 +122,7 @@ foreach ($instru as $key => $value):
 
     <script>
         //menu responsive code JS
+        
 
         var menu_toggle = document.querySelector('.menu_toggle');
         var menu = document.querySelector('.menu');

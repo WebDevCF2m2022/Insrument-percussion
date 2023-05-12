@@ -37,4 +37,9 @@ function getAllInstruments(PDO $db){
     //var_dump($data);
     return $data;
 }
+function trunCate (string $text): string{
+    // fonction qui trouve un numérique qui est la dernière sous chaine dans une chaine pour remplacer $cut : " "
+    $cut = strrpos($text, ' ');
+    return substr ($text, 0,$cut);
+}
 
