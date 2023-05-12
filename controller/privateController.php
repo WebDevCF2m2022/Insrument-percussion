@@ -38,7 +38,7 @@ if (isset($_GET['disconnect'])){
 
         $pourDB = $imgInsertPath.$nomTemps.'.';
        //créer une condition avec un if pour vérifier si le fichier est bien une image avec imagetypes
-        if(!in_array(exif_imagetype($_FILES['image_field']['tmp_name']), [IMAGETYPE_JPEG, IMAGETYPE_PNG , IMAGETYPE_GIF])){
+        if(!in_array(exif_imagetype($_FILES['image_field']['tmp_name']), [IMAGETYPE_JPEG, IMAGETYPE_PNG , IMAGETYPE_GIF,IMAGETYPE_WEBP])){
             echo 'Le fichier n\'est pas une image';
             die();
         }
