@@ -36,7 +36,12 @@ if (isset($_GET['disconnect'])){
         $nomTemps = date('YmdHis').mt_rand(1000, 9999);
         $imgInsertPath = 'img/upload/';
 
-        $pourDB = $imgInsertPath.$nomTemps.'.jpg';
+        $pourDB = $imgInsertPath.$nomTemps.'.';
+       //créer une condition avec un if pour vérifier si le fichier est bien une image avec imagetypes
+        if(!in_array(exif_imagetype($_FILES['image_field']['tmp_name']), [IMAGETYPE_JPEG, IMAGETYPE_PNG , IMAGETYPE_GIF])){
+            echo 'Le fichier n\'est pas une image';
+            die();
+        }
 
         $handle = new Upload($_FILES['image_field']);
         if ($handle->uploaded) {
@@ -44,9 +49,9 @@ if (isset($_GET['disconnect'])){
             $handle->image_resize         = true;
             $handle->image_x              = 400;
             $handle->image_ratio_y        = true;
-            $handle->process('../public/'.$imgInsertPath);
+            $handle->process($imgInsertPath);
             if ($handle->processed) {
-                echo 'image resized';
+                echo 'Image envoyée avec succès !';
                 $handle->clean();
             } else {
                 echo 'error : ' . $handle->error;
