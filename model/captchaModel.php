@@ -10,10 +10,10 @@ $status = 'error';
 if(isset($_POST['submit_frm'])) {
     
     $postData = $_POST;
-    $name = trim($_POST['nom']);
-    $email = trim($_POST['email']);
-    $objet = trim($_POST['objet']);
-    $message = trim($_POST['message']);
+    $name = htmlspecialchars(strip_tags(trim($_POST['nom'])));
+    $email = htmlspecialchars(strip_tags(trim($_POST['email'])));
+    $objet = htmlspecialchars(strip_tags(trim($_POST['objet'])));
+    $message = htmlspecialchars(strip_tags(trim($_POST['message'])));
 
     if(empty($name)){
         $valErr .= 'Veuillez entrez votre nom.</br>';
