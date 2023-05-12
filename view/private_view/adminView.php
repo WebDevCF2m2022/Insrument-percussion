@@ -10,23 +10,48 @@
     <h1>Admin</h1>
     <a href="?disconnect">Deconnexion</a>
     <a href="?insert">Ajouter un article</a>
+    <br>
+    <br><style>
+    table, th, td {
+         border: 2px solid black; border-collapse: collapse; 
+         } 
+         th, td { 
+            padding: 5px; } 
+            </style>
+            <table>
+            <thead> 
+                <tr> 
+                    <th>ID</th>
+                     <th>Resume</th> 
+                     <th>Description</th> 
+                     <th>Son</th> 
+                     <th>Url</th> 
+                     <th>Update</th> 
+                     <th>Delete</th> 
+                    </tr>
+             </thead><tbody>
+    
     <?php
     foreach($instruments as $instru):
-        //var_dump($instru);
+        // var_dump($instru);
     ?>
-    <form action="?update=<?=$instru['id']?>" method="post">
-        <input type="text" name="nom" placeholder="nom" value="<?=$instru['nom']?>">
-        <input type="text" name="resume" placeholder="resume" value="<?=$instru['resume']?>">
-        <input type="text" name="description" placeholder="description"  value="<?=$instru['description']?>">
-        <input type="text" name="son" placeholder="son" value="<?=$instru['son']?>">
-        <input type="text" name="url" placeholder="url" value="<?=$instru['url']?>">
-        <input type="hidden" name="id" value="<?=$instru['id']?>">
-        <input type="submit" value="Modifier">
-        <button type="text">Supprimer  <a href="?delete=<?=$instru['id']?>"></button> Supprimer</a>
-    </form>
+    <tr>
+        <td><?=$instru['nom']?></td>
+        <td><?=trunCate(substr($instru['description'],0,200))?></td>
+        <td><?= trunCate(substr($instru['description'],0,200))?></td> 
+        <td><?=$instru['son']?></td>
+        <td><?=$instru['url']?></td>
+        <td><?=$instru['id']?></td>
+        <td><input type="submit" value="Modifier"></td>
+        <td><button type="text">Supprimer <a href="?delete=<?=$instru['id']?>"></button></td>
+        </tr>
+    
+    
 
     <?php
     endforeach;
     ?>
+    </table>
+    </tbody>
 </body>
 </html>

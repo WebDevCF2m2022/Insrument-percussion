@@ -348,6 +348,19 @@ footer {
     display: none;
 }
 
+.tableau{
+    background-color: aqua;
+}
+
+.titreA{
+    text-align: center;
+}
+.nomA{
+    text-decoration: none;
+}
+
+
+
 /*Responsive*/
 @media (max-width:700px) {
     header {
