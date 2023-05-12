@@ -33,12 +33,17 @@ function addInstrument(PDO $db, $nom, string $resume, string $description, strin
     return $db->lastInsertId();
 }
 
+
+//fonction pour ajouter une image dans la DB (table image)
 function insertImg(PDO $db, $img_url, $instruments_id){
     $retour = $db->prepare('INSERT INTO `image` (img_url, instruments_id) VALUES (?, ?)');
+
     try{
         $retour->execute([$img_url, $instruments_id]);
     }catch(Exception $e){
         die($e->getMessage());
     }
-    return $retour->rowCount();
+
+    return $db->lastInsertId();
+
 }

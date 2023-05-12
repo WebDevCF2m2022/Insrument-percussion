@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Coordonnées géographiques</title>
+</head>
+<body>
+     <!--//localisation de Bruxelles , coordonnées GPS
+    <script>
+        var bruxelles = {lat: 50.8503, lng: 4.3517};
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: bruxelles,
+                zoom: 8,
+            });
+        }
+    </script> 
+-->
+<div class="centrale">
+<h1>Coordonnées géographiques</h1>
+    <table>
+        <tr>
+            <td>Pays</td>
+            <td>Lieu</td>
+            <td>Longitude</td>
+            <td>Latitude</td>
+            
+        </tr>
+        <tr>
+            <td>Belgique</td>
+            <td>Bruxelles - Grand'Place</td>
+            <td>4.3525141 (4° 21' 9" E)</td>
+            <td>50.8467143 (50°  50' 48" N)</td>
+            
+        </tr>
+        <tr>
+            <td>France</td>
+            <td>Paris - Tour Eiffel</td>
+            <td>2.2945015 (2° 17' 40" E) </td>
+            <td>48.8579662 (48° 51' 29" N)</td>
+            
+        </tr>
+                <tr>
+            <td>USA/Canada</td>
+            <td>Chute de Niagara</td>
+            <td>-79.0708755 (79° 4' 15" O)</td>
+            <td>43.0835971 (43° 5' 1" N)</td>
+            
+        </tr>
+                <tr>
+            <td>Inde</td>
+            <td>Taj Mahal</td>
+            <td>78.0420968 (78° 2' 32" E)</td>
+            <td>27.1750123 (27° 10' 30" N)</td>
+        </tr>
+    </tr>
+    <tr>
+            <td>Pérou</td>
+            <td>Cité Inca de Machu Picchu</td>
+            <td>-72.53139 (79° 31' 53" O)</td>
+            <td>-13.15833 (13° 9' 30" S)</td>
+    </tr>
+    </table>
+</div>
+</body>
+</html>
