@@ -15,7 +15,7 @@
             <li><a href="?page=Electrophone">Electrophone</a></li>
             <li><a href="?page=Idiophone">Idiophone</a></li>
             <li><a href="?page=Membranophone">Membranophone</a></li> 
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="?page=contact">Contact</a></li>
             
         </ul>
 
