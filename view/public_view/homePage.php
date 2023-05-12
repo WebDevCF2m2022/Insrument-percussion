@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet </title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/menuBurger.js" defer></script>
     <script src="https://kit.fontawesome.com/3010b1eaf1.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -120,21 +121,7 @@ foreach ($instru as $key => $value):
     <?php include 'include/footer.inc.php' ?>
    
 
-    <script>
-        //menu responsive code JS
-        
-
-        var menu_toggle = document.querySelector('.menu_toggle');
-        var menu = document.querySelector('.menu');
-        var menu_toggle_span = document.querySelector('.menu_toggle span');
-
-        menu_toggle.onclick = function(){
-            menu_toggle.classList.toggle('active');
-            menu_toggle_span.classList.toggle('active');
-            menu.classList.toggle('responsive') ;
-        }
-
-    </script>
+    
 
 <script>
     let body = document.querySelector("body");
