@@ -18,12 +18,6 @@
         }
     </script>
 </head>
-<?php
-if(isset($_POST['submit']))
-{
-    print_r($_POST);  die();
-}
-?>
 <body>
 
 <!--header-->
@@ -81,7 +75,7 @@ if(isset($_POST['submit']))
 </body>
 </html>
 
-<script>
+<!--<script>
     grecaptcha.ready(function() {
         grecaptcha.execute('6LeaIZUlAAAAADmNnMlAY0sJmMuNarGdb-_3J18j', {action: 'submit'}).then(
             function(token) {
@@ -91,4 +85,4 @@ if(isset($_POST['submit']))
             });
     });
 
-</script>
+</script>-->
