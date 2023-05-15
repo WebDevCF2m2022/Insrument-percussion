@@ -53,7 +53,7 @@
         <td><?=$instru['url']?></td>
         <td><?=$instru['id']?></td>
         <td><input type="submit" value="Modifier"></td>
-        <td><button type="text">Supprimer <a href="?delete=<?=$instru['id']?>"></button></td>
+        <td><a href="?delete=<?=$instru['id']?>">Supprimer</td>
         </tr>
     
     
