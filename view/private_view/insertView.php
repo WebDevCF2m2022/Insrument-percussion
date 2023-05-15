@@ -27,19 +27,20 @@
                      <th>Description</th> 
                      <th>Son</th> 
                      <th>Url</th>
-                     <th>Fichier</th>  
+                     <th>Catégorie</th> 
+                     <th>Fichier</th> 
                     </tr>
              </thead><tbody>
  
 
-
+    <a href="./">Revenir à l'ADMIN</a>
     <form action="" method="post" enctype="multipart/form-data">
         <td><input type="text" name="nom" placeholder="nom"></td>
         <td><input type="text" name="resume" placeholder="resume"></td>
         <td><input type="text" name="description" placeholder="description"></td>
         <td><input type="text" name="son" placeholder="son"></td>
         <td><input type="text" name="url" placeholder="url"></td>
-        <select name="categorie_id">
+        <td><select name="categorie_id">
 
         <?php
         foreach ($dataCateg as $categorie):
@@ -51,7 +52,7 @@
         <?php
          endforeach;
         ?>
-        </select></br>
+        </td></select></br>
         <td><input type="file" size="32" name="image_field" value=""></td>
        <button type="submit">Ajouter</button>
     </form>
