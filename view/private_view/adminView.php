@@ -36,7 +36,6 @@
                      <th>Son</th> 
                      <th>Url</th> 
                      <th>Numero</th> 
-                     <th>Modifier</th> 
                      <th>Supprimer</th> 
                     </tr>
              </thead><tbody>
@@ -45,16 +44,24 @@
     foreach($instruments as $instru):
         // var_dump($instru);
     ?>
-    <tr>
-        <td><?=$instru['nom']?></td>
-        <td><?=trunCate(substr($instru['description'],0,200))?></td>
+    <tr> 
+        <td><?=$instru['nom']?></td> 
+        <td><?=trunCate(substr($instru['description'],0,200))?></td> 
         <td><?= trunCate(substr($instru['description'],0,200))?></td> 
-        <td><?=$instru['son']?></td>
-        <td><?=$instru['url']?></td>
-        <td><?=$instru['id']?></td>
-        <td><input type="submit" value="Modifier"></td>
-        <td><a href="?delete=<?=$instru['id']?>">Supprimer</td>
+        <td><?=$instru['son']?></td> <td><?=$instru['url']?></td> 
+        <td><?=$instru['id']?></td> 
+        <td><a href="?delete=<?=$instru['id']?>">Supprimer</td> 
         </tr>
+        <form action="?update=<?=$instru['id']?>" method="post"> 
+        <td><input type="text" name="nom" placeholder="nom" value="<?=$instru['nom']?>"></td> 
+        <td> <input type="text" name="resume" placeholder="resume" value="<?=$instru['resume']?>"></td> 
+        <td> <input type="text" name="description" placeholder="description" value="<?=$instru['description']?>"></td> 
+        <td> <input type="text" name="son" placeholder="son" value="<?=$instru['son']?>"></td> 
+        <td> <input type="text" name="url" placeholder="url" value="<?=$instru['url']?>"></td> 
+        <td> <input type="hidden" name="id" value="<?=$instru['id']?>"></td> 
+        <td> <input type="submit" value="Modifier"></td> 
+    </form> 
+
     
     
 
